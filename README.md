@@ -65,7 +65,7 @@ Meine Blogs laufen **unabhängig** von diesem Code auf Ghost:
 4.  **Warten:** Es dauert ca. 1-2 Minuten, bis die Änderung live ist ("Bauarbeiter-Pause").
 
 ### Szenario B: Formular ändern
-1.  Einloggen bei [Tally.so](https://tally.so).
+1.  Einloggen bei [Tally.so](https://tally.so) j.mei... 123...
 2.  Ändern & "Publish" klicken.
 3.  **Nichts hochladen!** Die Website aktualisiert sich von selbst.
 
