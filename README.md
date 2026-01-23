@@ -32,10 +32,18 @@ Es gibt **kein Backend**, keine Datenbank und kein Wordpress auf der Hauptdomain
 ### Die Komponenten
 * **Domain:** Strato (`timeandspace.online`).
     * *DNS:* A-Record zeigt auf GitHub IP `185.199.108.153`.
-* **Content:**
-    * `index.html`: Die Struktur.
+* **Domain:** Strato (`timeandspace.online`).
+    * *DNS:* A-Record zeigt auf GitHub IP `185.199.108.153`.
+* **Content (Die Dateien):**
+    * `index.html`: Die Hauptseite (Startseite).
     * `style.css`: Das Design (Terminal-Look, Neon-Pink #FF1493).
     * `logo.png`: Das Logo (freigestellt via remove.bg).
+* **Rechtliches (Legal Pages):**
+    * `impressum.html`: Anbieterkennzeichnung (Link im Footer).
+    * `datenschutz.html`: Datenschutzerklärung (Link im Footer).
+    * *Hinweis:* Diese Seiten nutzen denselben CSS-Style, sind aber eigenständige Dateien.
+* **Interaktion:**
+    * Das Audit-Formular kommt von **[Tally.so](https://tally.so)** (als iFrame eingebettet).
 * **Interaktion:**
     * Das Audit-Formular kommt von **[Tally.so](https://tally.so)**.
     * Es ist per `<iframe>` eingebettet. Änderungen mache ich NUR bei Tally.
