@@ -1,0 +1,172 @@
+/* RESET & VARIABLEN */
+:root {
+    --bg-color: #0A0A0A;       /* Deep Dark / Weltraum */
+    --text-color: #E0E0E0;     /* Gebrochenes Weiß */
+    --accent-color: #FF1493;   /* Pink Sheep Neon */
+    --font-system: 'JetBrains Mono', monospace;
+    --font-human: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-human);
+    line-height: 1.6;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* LAYOUT CONTAINER */
+.terminal-container {
+    max-width: 700px; /* Fokus-Kanal: Nicht zu breit */
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* TYPOGRAFIE */
+h1, h2, h3, .logo, .btn-terminal {
+    font-family: var(--font-system);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Container für alles oben (Schaf links, Status rechts) */
+header {
+    display: flex;                 /* Zauberwort: Macht Elemente nebeneinander */
+    justify-content: space-between; /* Schiebt eins ganz nach links, eins ganz nach rechts */
+    align-items: center;            /* Richtet sie vertikal mittig aus */
+    padding-top: 20px;
+    padding-bottom: 40px;           /* Luft nach unten zum Text */
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.blink {
+    color: var(--accent-color);
+    animation: blinker 1.2s linear infinite;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+/* Das Design für den "SYSTEM: ONLINE" Kasten */
+.status-light {
+    border: 1px solid #FF1493;      /* Pinker Rahmen */
+    color: #FF1493;                 /* Pinker Text */
+    padding: 5px 15px;              /* Etwas Luft innen */
+    font-family: 'JetBrains Mono', monospace; /* Hacker-Schrift */
+    font-size: 0.8rem;              /* Nicht zu riesig */
+    letter-spacing: 1px;
+}
+
+/* HERO SECTION */
+.hero {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero .subline {
+    font-size: 1.1rem;
+    color: #AAA;
+    border-left: 2px solid var(--accent-color);
+    padding-left: 1rem;
+}
+
+/* INTERFACE (Tally) */
+.interface {
+    margin-bottom: 4rem;
+    background: #111; /* Leichter Kontrast zum Hintergrund */
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 1rem;
+    min-height: 300px; /* Platzhalterhöhe */
+}
+
+/* LABOR LINK (Weiche) */
+.labor-link {
+    text-align: center;
+    margin-bottom: 4rem;
+    margin-top: auto; /* Drückt es nach unten */
+}
+
+.btn-terminal {
+    display: inline-block;
+    color: var(--text-color);
+    text-decoration: none;
+    border: 1px solid #444;
+    padding: 1rem 2rem;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.btn-terminal:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(221, 52, 123, 0.2);
+}
+
+.meta-info {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* FOOTER */
+footer {
+    border-top: 1px solid #333;
+    padding-top: 2rem;
+    text-align: center;
+    font-family: var(--font-system);
+    font-size: 0.7rem;
+    color: #555;
+}
+
+.legal-links a {
+    color: #777;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.legal-links a:hover {
+    color: #FF1493;
+}
+
+.separator {
+    color: #333;
+}
+
+.copy {
+    margin-top: 1rem;
+}
+
+/* MOBILE ANPASSUNG */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    
+    .terminal-container {
+        padding: 1rem;
+    }
+}
