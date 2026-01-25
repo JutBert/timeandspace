@@ -164,6 +164,27 @@ details[open] summary { color: #fff; margin-bottom: 1rem; }
 .mode-item { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px dotted #222; }
 .mode-item:last-child { border-bottom: none; }
 
+/* --- FIX FÜR DEN LABOR BUTTON --- */
+
+.btn-terminal {
+    display: inline-block;
+    color: #E0E0E0;            /* Helle Schrift */
+    text-decoration: none;     /* Unterstrich weg */
+    border: 1px solid #444;    /* Dezenter Rahmen */
+    padding: 0.8rem 1.5rem;    /* Innenabstand */
+    font-family: 'JetBrains Mono', monospace; /* Terminal Schriftart */
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.btn-terminal:hover {
+    border-color: #FF1493;     /* Pinker Rahmen beim Drüberfahren */
+    color: #FF1493;            /* Pinke Schrift */
+    box-shadow: 0 0 8px rgba(255, 20, 147, 0.3); /* Leichtes Leuchten */
+}
 /* FOOTER */
 .labor-link { text-align: center; margin-bottom: 4rem; }
 .meta-info { margin-top: 0.5rem; font-size: 0.8rem; color: #555; }
