@@ -1,17 +1,17 @@
 /* RESET & VARIABLEN */
 :root {
-    --bg-color: #0A0A0A;       /* Deep Dark / Weltraum */
-    --text-color: #E0E0E0;     /* Gebrochenes Weiß */
+    --bg-color: #0A0A0A;       /* Deep Dark */
+    --text-color: #E0E0E0;     /* Off-White */
     --accent-color: #FF1493;   /* Pink Sheep Neon */
+    --muted-color: #666666;    /* Grau für unwichtiges */
+    --card-bg: #111111;        /* Karten Hintergrund */
+    --border-color: #333333;   /* Rahmen */
+    
     --font-system: 'JetBrains Mono', monospace;
     --font-human: 'Inter', sans-serif;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
     background-color: var(--bg-color);
@@ -19,12 +19,12 @@ body {
     font-family: var(--font-human);
     line-height: 1.6;
     font-weight: 300;
-    -webkit-font-smoothing: antialiased;
+    padding-bottom: 50px;
 }
 
-/* LAYOUT CONTAINER */
+/* LAYOUT */
 .terminal-container {
-    max-width: 700px; /* Fokus-Kanal: Nicht zu breit */
+    max-width: 680px;
     margin: 0 auto;
     padding: 2rem 1.5rem;
     min-height: 100vh;
@@ -32,141 +32,149 @@ body {
     flex-direction: column;
 }
 
-/* TYPOGRAFIE */
-h1, h2, h3, .logo, .btn-terminal {
+/* TYPO HELPERS */
+h1, h2, h3, .logo, .btn-primary, .btn-secondary, summary {
     font-family: var(--font-system);
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
-/* Container für alles oben (Schaf links, Status rechts) */
+.highlight-neon { color: var(--accent-color); font-weight: 700; }
+.highlight-text { color: var(--accent-color); }
+.muted { color: var(--muted-color); }
+
+/* HEADER */
 header {
-    display: flex;                 /* Zauberwort: Macht Elemente nebeneinander */
-    justify-content: space-between; /* Schiebt eins ganz nach links, eins ganz nach rechts */
-    align-items: center;            /* Richtet sie vertikal mittig aus */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 20px;
-    padding-bottom: 40px;           /* Luft nach unten zum Text */
+    padding-bottom: 60px;
 }
+.logo { display: flex; align-items: center; font-weight: 700; font-size: 1.2rem; }
+.blink { color: var(--accent-color); animation: blinker 1.2s linear infinite; margin-left: 10px;}
+@keyframes blinker { 50% { opacity: 0; } }
 
-.logo {
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--text-color);
-}
-
-.blink {
-    color: var(--accent-color);
-    animation: blinker 1.2s linear infinite;
-}
-
-@keyframes blinker {
-    50% { opacity: 0; }
-}
-
-/* Das Design für den "SYSTEM: ONLINE" Kasten */
 .status-light {
-    border: 1px solid #FF1493;      /* Pinker Rahmen */
-    color: #FF1493;                 /* Pinker Text */
-    padding: 5px 15px;              /* Etwas Luft innen */
-    font-family: 'JetBrains Mono', monospace; /* Hacker-Schrift */
-    font-size: 0.8rem;              /* Nicht zu riesig */
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 4px 12px;
+    font-family: var(--font-system);
+    font-size: 0.75rem;
     letter-spacing: 1px;
 }
 
-/* HERO SECTION */
-.hero {
-    margin-bottom: 3rem;
-    text-align: left;
-}
-
-.hero h1 {
-    font-size: 2rem;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-}
-
-.hero .subline {
-    font-size: 1.1rem;
-    color: #AAA;
-    border-left: 2px solid var(--accent-color);
+/* HERO */
+.hero { margin-bottom: 4rem; }
+.hero h1 { font-size: 1.8rem; line-height: 1.3; margin-bottom: 1.5rem; color: #fff; }
+.hero .subline { font-size: 1.1rem; color: #BBB; margin-bottom: 1.5rem; }
+.hero .clarifier {
+    font-size: 1rem;
+    color: #999;
+    border-left: 2px solid #333;
     padding-left: 1rem;
+    margin-top: 1.5rem;
+    font-style: italic;
 }
+.hero .clarifier strong { color: #ddd; font-weight: 400; }
 
-/* INTERFACE (Tally) */
-.interface {
+/* MAIN INTERFACE CARD */
+.interface-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
     margin-bottom: 4rem;
-    background: #111; /* Leichter Kontrast zum Hintergrund */
-    border: 1px solid #333;
-    border-radius: 4px;
-    padding: 1rem;
-    min-height: 300px; /* Platzhalterhöhe */
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
-/* LABOR LINK (Weiche) */
-.labor-link {
-    text-align: center;
-    margin-bottom: 4rem;
-    margin-top: auto; /* Drückt es nach unten */
+.interface-card h3 {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #222;
+    padding-bottom: 10px;
 }
 
-.btn-terminal {
+.card-content p { margin-bottom: 0.5rem; font-family: var(--font-system); font-size: 0.9rem; color: #ccc; }
+.small-prompt { font-size: 0.8rem; color: var(--muted-color) !important; margin-top: 1rem; margin-bottom: 0.5rem !important; }
+
+/* BUTTONS */
+.btn-primary {
+    background: var(--accent-color);
+    color: #000;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    transition: transform 0.2s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 15px rgba(255, 20, 147, 0.4); }
+
+.btn-secondary {
     display: inline-block;
     color: var(--text-color);
     text-decoration: none;
     border: 1px solid #444;
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
+}
+.btn-secondary:hover { border-color: var(--accent-color); color: var(--accent-color); }
+
+/* TOGGLES / ACCORDION (DETAILS) */
+.details-stack { margin-bottom: 4rem; border-top: 1px solid #222; }
+
+details {
+    border-bottom: 1px solid #222;
+    padding: 1rem 0;
+}
+
+summary {
+    cursor: pointer;
+    list-style: none; /* Standard Dreieck weg */
+    color: #888;
     font-size: 0.9rem;
+    transition: color 0.3s;
+    user-select: none;
 }
+summary:hover { color: var(--accent-color); }
+summary::-webkit-details-marker { display: none; } /* Chrome Dreieck weg */
 
-.btn-terminal:hover {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-    box-shadow: 0 0 10px rgba(221, 52, 123, 0.2);
-}
+/* Custom Plus/Minus Marker */
+summary::after { content: "+"; float: right; font-weight: bold; }
+details[open] summary::after { content: "-"; color: var(--accent-color); }
+details[open] summary { color: #fff; margin-bottom: 1rem; }
 
-.meta-info {
-    display: block;
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
-    color: #666;
+/* Inhalt der Toggles */
+.details-content {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    border-left: 1px solid #333;
+    font-size: 0.95rem;
+    color: #bbb;
 }
+.details-content p { margin-bottom: 0.8rem; }
+.details-content ul { padding-left: 1.2rem; }
+.details-content li { margin-bottom: 0.5rem; }
+.step-number { color: var(--accent-color); font-family: var(--font-system); margin-right: 5px; }
+.mode-item { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px dotted #222; }
+.mode-item:last-child { border-bottom: none; }
 
 /* FOOTER */
+.labor-link { text-align: center; margin-bottom: 4rem; }
+.meta-info { margin-top: 0.5rem; font-size: 0.8rem; color: #555; }
+
 footer {
-    border-top: 1px solid #333;
+    border-top: 1px solid #222;
     padding-top: 2rem;
     text-align: center;
     font-family: var(--font-system);
     font-size: 0.7rem;
-    color: #555;
+    color: #444;
 }
-
-.legal-links a {
-    color: #777;
-    text-decoration: none;
-    margin: 0 0.5rem;
-}
-
-.legal-links a:hover {
-    color: #FF1493;
-}
-
-.separator {
-    color: #333;
-}
-
-.copy {
-    margin-top: 1rem;
-}
-
-/* MOBILE ANPASSUNG */
-@media (max-width: 600px) {
-    .hero h1 {
-        font-size: 1.6rem;
-    }
-    
-    .terminal-container {
-        padding: 1rem;
-    }
-}
+.legal-links a { color: #666; text-decoration: none; margin: 0 0.5rem; }
+.legal-links a:hover { color: var(--accent-color); }
