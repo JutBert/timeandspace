@@ -68,7 +68,9 @@ header {
 .hero { margin-bottom: 4rem; }
 .hero h1 { font-size: 1.8rem; line-height: 1.3; margin-bottom: 1.5rem; color: #fff; }
 .hero .subline { font-size: 1.1rem; color: #BBB; margin-bottom: 1.5rem; }
-.hero .clarifier {
+
+/* Neue Clarifier Styles (fehlten vorher) */
+.clarifier {
     font-size: 1rem;
     color: #999;
     border-left: 2px solid #333;
@@ -76,7 +78,7 @@ header {
     margin-top: 1.5rem;
     font-style: italic;
 }
-.hero .clarifier strong { color: #ddd; font-weight: 400; }
+.clarifier strong { color: #ddd; font-weight: 400; }
 
 /* MAIN INTERFACE CARD */
 .interface-card {
@@ -88,48 +90,35 @@ header {
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
-.interface-card h3 {
+/* Styles für den Text ÜBER dem Tally (fehlten vorher) */
+.interface-text {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+}
+.interface-text h3 {
     font-size: 1rem;
     color: #fff;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid #222;
-    padding-bottom: 10px;
+    margin-bottom: 1rem;
 }
-
-.card-content p { margin-bottom: 0.5rem; font-family: var(--font-system); font-size: 0.9rem; color: #ccc; }
-.small-prompt { font-size: 0.8rem; color: var(--muted-color) !important; margin-top: 1rem; margin-bottom: 0.5rem !important; }
-
-/* BUTTONS */
-.btn-primary {
-    background: var(--accent-color);
-    color: #000;
-    border: none;
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    width: 100%;
+.interface-text p {
+    font-family: var(--font-system);
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 0.5rem;
+}
+.small-prompt {
+    font-size: 0.8rem;
+    color: #666 !important;
     margin-top: 1rem;
-    transition: transform 0.2s;
+    font-family: var(--font-system);
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 15px rgba(255, 20, 147, 0.4); }
-
-.btn-secondary {
-    display: inline-block;
-    color: var(--text-color);
-    text-decoration: none;
-    border: 1px solid #444;
-    padding: 0.8rem 1.5rem;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
-}
-.btn-secondary:hover { border-color: var(--accent-color); color: var(--accent-color); }
 
 /* TOGGLES / ACCORDION (DETAILS) */
-.details-stack { margin-bottom: 4rem; border-top: 1px solid #222; }
+.details-stack { margin-bottom: 4rem; border-top: 1px solid #333; }
 
 details {
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid #333;
     padding: 1rem 0;
 }
 
@@ -156,6 +145,7 @@ details[open] summary { color: #fff; margin-bottom: 1rem; }
     border-left: 1px solid #333;
     font-size: 0.95rem;
     color: #bbb;
+    margin-top: 1rem;
 }
 .details-content p { margin-bottom: 0.8rem; }
 .details-content ul { padding-left: 1.2rem; }
@@ -164,7 +154,8 @@ details[open] summary { color: #fff; margin-bottom: 1rem; }
 .mode-item { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px dotted #222; }
 .mode-item:last-child { border-bottom: none; }
 
-/* --- FIX FÜR DEN LABOR BUTTON --- */
+
+/* --- BUTTONS & LABOR LINK --- */
 
 .btn-terminal {
     display: inline-block;
@@ -185,6 +176,7 @@ details[open] summary { color: #fff; margin-bottom: 1rem; }
     color: #FF1493;            /* Pinke Schrift */
     box-shadow: 0 0 8px rgba(255, 20, 147, 0.3); /* Leichtes Leuchten */
 }
+
 /* FOOTER */
 .labor-link { text-align: center; margin-bottom: 4rem; }
 .meta-info { margin-top: 0.5rem; font-size: 0.8rem; color: #555; }
