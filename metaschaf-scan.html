@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MetaSchaf-Scan — Welches unsichtbare Programm steuert dich?</title>
+<link rel="icon" type="image/png" href="logo.png">
+<meta name="description" content="Finde in 5 Minuten heraus, welches unbewusste Muster dein Verhalten steuert — und wer davon profitiert.">
+<meta property="og:title" content="MetaSchaf-Scan — Welches unsichtbare Programm steuert dich?">
+<meta property="og:description" content="12 Fragen. 5 Minuten. Ein Ergebnis, das sitzt.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="scan-page">
+
+<div class="ambient">
+  <div class="ambient-orb"></div>
+  <div class="ambient-orb"></div>
+</div>
+<div class="scan-line"></div>
+<div class="progress-bar" id="progressBar" style="width: 0%"></div>
+
+<!-- ======== TOP NAV ======== -->
+<div class="container">
+  <nav class="top-nav" id="topNav">
+    <div class="logo-area">
+      <a href="https://timeandspace.online" target="_blank">
+        <img src="logo.png" alt="Time & Space Logo">
+        <span class="blink">_</span>
+      </a>
+    </div>
+    <div class="status-light">SYSTEM: ONLINE</div>
+  </nav>
+</div>
+
+<!-- ======== INTRO ======== -->
+<div id="intro">
+  <div class="container">
+    <div class="intro-badge animate-fade-up delay-1">MetaSchaf-Scan</div>
+    <h1 class="animate-fade-up delay-2">Welches unsichtbare Programm <span id="typewriter-text"></span><span id="typewriter-cursor"></span></h1>
+    <p class="intro-text animate-fade-up delay-3">
+      Du funktionierst. Du machst deinen Job, triffst Entscheidungen, lebst dein Leben.
+      Aber hast du dich mal gefragt, wer eigentlich auf den Kn&ouml;pfen sitzt?
+    </p>
+    <p class="intro-text animate-fade-up delay-4">
+      Dieser Scan zeigt dir das Muster, das unter deinem Alltag l&auml;uft &mdash;
+      und wer davon profitiert, dass du es nicht siehst.
+    </p>
+    <div class="intro-details animate-fade-up delay-5">
+      <span><span class="dot"></span> 12 Fragen</span>
+      <span><span class="dot"></span> 5 Minuten</span>
+      <span><span class="dot"></span> Pers&ouml;nliches Ergebnis</span>
+    </div>
+    <button class="btn-start animate-fade-up delay-6" onclick="startScan()">
+      Scan starten <span class="arrow">&rarr;</span>
+    </button>
+  </div>
+</div>
+
+<!-- ======== SCAN ======== -->
+<div id="scan">
+  <div class="container">
+    <div class="scan-header">
+      <div class="scan-logo">
+        <img src="logo.png" alt="Logo">
+        <span class="scan-logo-text">MetaSchaf</span>
+      </div>
+      <div class="scan-counter" id="scanCounter">01 / 12</div>
+    </div>
+    <div id="questionArea"></div>
+  </div>
+</div>
+
+<!-- ======== PROCESSING ======== -->
+<div id="processing">
+  <div class="processing-content">
+    <div class="processing-ring"></div>
+    <div class="processing-text" id="processingText">Muster werden analysiert...</div>
+    <div class="processing-detail" id="processingDetail"></div>
+  </div>
+</div>
+
+<!-- ======== RESULT ======== -->
+<div id="result">
+  <div class="container">
+    <div class="result-intro">
+      <div class="label">Dein Scan-Ergebnis</div>
+      <h2 id="resultTitle"></h2>
+    </div>
+    <div id="resultContent"></div>
+  </div>
+</div>
+
+<!-- ======== IMPRESSUM ======== -->
+<div id="impressum" class="legal-page">
+  <div class="container">
+    <a class="legal-back" onclick="showMain()">&larr; Zur&uuml;ck zum Scan</a>
+    <h2>Impressum</h2>
+    <h3>Angaben gem&auml;&szlig; &sect; 5 TMG</h3>
+    <p>
+      Bewusstsein<br>
+      TimeAndSpace<br>
+      Musterstra&szlig;e 42<br>
+      12345 Musterstadt<br>
+      Deutschland
+    </p>
+    <h3>Kontakt</h3>
+    <p>
+      E-Mail: kontakt@timeandspace.online
+    </p>
+    <h3>Verantwortlich f&uuml;r den Inhalt nach &sect; 55 Abs. 2 RStV</h3>
+    <p>
+      Bewusstsein<br>
+      Musterstra&szlig;e 42<br>
+      12345 Musterstadt
+    </p>
+    <h3>Haftungsausschluss</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+    <p>
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+    </p>
+    <h3>Urheberrecht</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+    </p>
+  </div>
+</div>
+
+<!-- ======== DATENSCHUTZ ======== -->
+<div id="datenschutz" class="legal-page">
+  <div class="container">
+    <a class="legal-back" onclick="showMain()">&larr; Zur&uuml;ck zum Scan</a>
+    <h2>Datenschutzerkl&auml;rung</h2>
+    <h3>1. Datenschutz auf einen Blick</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <h3>2. Allgemeine Hinweise und Pflichtinformationen</h3>
+    <p>
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+    <h3>3. Datenerfassung auf dieser Website</h3>
+    <p>
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+    </p>
+    <p>
+      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+    </p>
+    <h3>4. Analyse-Tools und Werbung</h3>
+    <p>
+      At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.
+    </p>
+    <h3>5. Newsletter</h3>
+    <p>
+      Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+    </p>
+    <h3>6. Kontakt</h3>
+    <p>
+      Bei Fragen zum Datenschutz k&ouml;nnen Sie sich jederzeit an uns wenden: kontakt@timeandspace.online
+    </p>
+  </div>
+</div>
+
+<!-- ======== NAVIGATION ======== -->
+<div class="container" id="siteNav">
+  <section class="labor-link">
+    <a href="https://timeandspace.online" target="_blank" class="btn-terminal">[ LOGIKFEHLER ]</a>
+    <a href="https://explore.timeandspace.online" target="_blank" class="btn-terminal">[ ZUGRIFF AUF LABOR-DATENBANK ]</a>
+    <p class="meta-info">Deep Dives, Protokolle & Essays</p>
+  </section>
+</div>
+
+<!-- ======== FOOTER ======== -->
+<footer class="site-footer" id="siteFooter">
+  <div class="footer-inner">
+    <div class="legal-links">
+      <a href="#" onclick="showLegal('impressum'); return false;">Impressum</a>
+      <span class="separator">|</span>
+      <a href="#" onclick="showLegal('datenschutz'); return false;">Datenschutz</a>
+    </div>
+    <div class="copy">&copy; 2026 Time + Space Protocol</div>
+  </div>
+</footer>
+
+<script>
+// =======================================
+// TYPEWRITER
+// =======================================
+(function() {
+  var text = "steuert dich?";
+  var el = document.getElementById('typewriter-text');
+  var i = 0;
+  setTimeout(function() {
+    var interval = setInterval(function() {
+      if (i < text.length) {
+        el.textContent += text[i];
+        i++;
+      } else {
+        clearInterval(interval);
+        setTimeout(function() {
+          document.getElementById('typewriter-cursor').style.display = 'none';
+        }, 2000);
+      }
+    }, 70);
+  }, 800);
+})();
+
+// =======================================
+// LEGAL PAGE NAVIGATION
+// =======================================
+var lastVisibleScreen = 'intro';
+
+function showLegal(page) {
+  ['intro','scan','processing','result'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el.style.display !== 'none' && el.style.display !== '') {
+      if (id === 'intro' || id === 'result') lastVisibleScreen = id;
+    }
+  });
+  ['intro','scan','processing','result','impressum','datenschutz'].forEach(function(id) {
+    document.getElementById(id).style.display = 'none';
+  });
+  document.getElementById('topNav').parentElement.style.display = 'none';
+  document.getElementById(page).style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showMain() {
+  document.getElementById('impressum').style.display = 'none';
+  document.getElementById('datenschutz').style.display = 'none';
+  document.getElementById('topNav').parentElement.style.display = '';
+  document.getElementById(lastVisibleScreen).style.display = lastVisibleScreen === 'intro' ? 'flex' : 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// =======================================
+// DATA
+// =======================================
+var PROGRAMS = {
+  beweis: {
+    name: 'Der Beweis-Modus',
+    subtitle: 'Du lebst, um zu beweisen, dass du genug bist.',
+    description: 'Unter deinem Alltag l\u00e4uft ein Programm, das st\u00e4ndig fl\u00fcstert: \u201eDu musst zeigen, dass du es wert bist.\u201c Nicht laut, nicht dramatisch \u2014 aber bei jeder Entscheidung mit am Tisch. Du sagst Ja zu Projekten, die dich auffressen. Du arbeitest l\u00e4nger als n\u00f6tig. Du vergleichst dich mit Menschen, die du nicht mal magst. Nicht weil du das willst \u2014 sondern weil dieses Programm es verlangt.',
+    patterns: [
+      'Du sagst Ja, obwohl du Nein meinst \u2014 weil Nein sich anf\u00fchlt wie Versagen',
+      'Du arbeitest h\u00e4rter als n\u00f6tig, und trotzdem f\u00fchlt es sich nie \u201egenug\u201c an',
+      'Komplimente prallen ab, aber Kritik bleibt tagelang kleben',
+      'Du vergleichst dich st\u00e4ndig \u2014 und verlierst meistens',
+      'Pausen f\u00fchlen sich wie Faulheit an'
+    ],
+    exploit: 'Unternehmen lieben den Beweis-Modus. \u201eGeh die extra Meile.\u201c \u201eSei ein Top-Performer.\u201c Social Media gibt dir Likes als Beweis-Punkte. Die Selbstoptimierungsindustrie verkauft dir das n\u00e4chste Level. Und du kaufst \u2014 nicht weil du es brauchst, sondern weil das Programm sagt: noch nicht genug.',
+    exploitExamples: 'Hustle-Culture \u00b7 Performance-Reviews \u00b7 Like-Z\u00e4hler \u00b7 Titel als Identit\u00e4t \u00b7 \u201eGib 110%\u201c',
+    unlock: 'Der erste Schritt ist nicht, weniger zu arbeiten. Es ist zu merken, wann du arbeitest, um etwas zu beweisen \u2014 und wann, weil du es wirklich willst. Dieser Unterschied ver\u00e4ndert alles.',
+    unlockTip: 'Achte diese Woche auf Momente, in denen du etwas tust und dabei an eine unsichtbare Jury denkst. Wer sitzt in dieser Jury? Und wer hat sie da hingesetzt?'
+  },
+  harmonie: {
+    name: 'Der Harmonie-Modus',
+    subtitle: 'Du h\u00e4ltst den Frieden \u2014 auf deine Kosten.',
+    description: 'Unter deinem Alltag l\u00e4uft ein Programm, das Konflikte um jeden Preis vermeidet. Es f\u00fchlt sich an wie Freundlichkeit, R\u00fccksicht, Empathie \u2014 aber eigentlich ist es ein Deal: Du gibst nach, damit es nicht unangenehm wird. Du schluckst Dinge runter, die gesagt werden m\u00fcssten. Du sp\u00fcrst genau, was andere brauchen \u2014 aber hast verlernt, was du selbst brauchst.',
+    patterns: [
+      'Du merkst schneller, was andere f\u00fchlen, als was du selbst f\u00fchlst',
+      'Streit f\u00fchlt sich existenzbedrohend an \u2014 als w\u00fcrde die Beziehung daran zerbrechen',
+      'Du entschuldigst dich f\u00fcr Dinge, die nicht deine Schuld sind',
+      'Du schluckst \u00c4rger runter, bis er als Ersch\u00f6pfung wiederkommt',
+      'Wenn du Nein sagst, kommt sofort das schlechte Gewissen'
+    ],
+    exploit: 'Dein Harmonie-Modus macht dich zum perfekten Ziel f\u00fcr emotionale Manipulation. \u201eF\u00fcr das Team.\u201c \u201eDu bist doch so verst\u00e4ndnisvoll.\u201c Schuldgef\u00fchl-Marketing funktioniert bei dir besonders gut. Und in Beziehungen \u00fcbernimmst du die emotionale Arbeit \u2014 weil das Programm sagt: Wenn du aufh\u00f6rst, bricht alles zusammen.',
+    exploitExamples: 'Guilt-Trips \u00b7 \u201eTeamplayer\u201c-Kultur \u00b7 Toxische Beziehungsdynamiken \u00b7 Emotionale Arbeit als Pflicht',
+    unlock: 'Harmonie ist nicht das Problem. Das Problem ist, dass du glaubst, sie geht kaputt, wenn du ehrlich bist. Echte Verbindung entsteht nicht durch Nachgeben \u2014 sondern durch die Bereitschaft, auch die unbequeme Wahrheit auszusprechen.',
+    unlockTip: 'Bemerke diese Woche einmal bewusst, wenn du etwas runterschluckst. Frag dich nicht, ob du es sagen sollst \u2014 frag dich nur: Was genau wollte ich gerade sagen? Schreib es auf. Nur f\u00fcr dich.'
+  },
+  kontrolle: {
+    name: 'Der Kontroll-Modus',
+    subtitle: 'Du h\u00e4ltst alles zusammen \u2014 weil du glaubst, es f\u00e4llt sonst auseinander.',
+    description: 'Unter deinem Alltag l\u00e4uft ein Programm, das st\u00e4ndig vorausdenkt, absichert und plant. Es f\u00fchlt sich an wie Verantwortung und Klugheit \u2014 aber dahinter steckt die \u00dcberzeugung, dass Kontrollverlust gleichbedeutend mit Katastrophe ist. Du kannst nicht loslassen, nicht delegieren, nicht abwarten. Alles muss durch deine H\u00e4nde.',
+    patterns: [
+      'Du planst drei Schritte voraus \u2014 auch wenn niemand darum gebeten hat',
+      'Wenn andere Dinge anders machen als du, macht dich das unruhig',
+      '\u00dcberraschungen sind f\u00fcr dich kein Geschenk, sondern ein Problem',
+      'Du checkst Dinge doppelt und dreifach \u2014 sicher ist sicher',
+      'Delegation f\u00fchlt sich an wie Kontrollverlust, nicht wie Teamarbeit'
+    ],
+    exploit: 'Die Angst vor Kontrollverlust ist ein Milliarden-Gesch\u00e4ft. Versicherungen, Tracking-Apps, Produktivit\u00e4ts-Tools, Ern\u00e4hrungspl\u00e4ne \u2014 sie alle versprechen: Wenn du genug kontrollierst, kann nichts schiefgehen. Und du kaufst, weil das Programm sagt: Noch ein System, noch ein Plan, dann bin ich sicher.',
+    exploitExamples: 'Versicherungsmarketing \u00b7 Tracking-Obsession \u00b7 Produktivit\u00e4ts-Industrie \u00b7 \u201ePlan B f\u00fcr den Plan B\u201c',
+    unlock: 'Kontrolle gibt dir das Gef\u00fchl von Sicherheit. Aber echte Sicherheit kommt nicht davon, alles zu kontrollieren \u2014 sondern davon, zu wissen, dass du auch mit dem Unkontrollierten umgehen kannst.',
+    unlockTip: 'Lass diese Woche bewusst eine Kleinigkeit unkontrolliert. Nicht den gro\u00dfen Plan \u2014 nur eine winzige Sache. Beobachte, was in dir passiert. Das Gef\u00fchl, das aufkommt, ist das Programm.'
+  },
+  unsichtbar: {
+    name: 'Der Unsichtbar-Modus',
+    subtitle: 'Du bleibst klein \u2014 damit du nie zu gro\u00df scheitern kannst.',
+    description: 'Unter deinem Alltag l\u00e4uft ein Programm, das dich unter dem Radar h\u00e4lt. Du hast gute Ideen, aber sagst sie nicht. Du hast Dinge erreicht, aber sprichst nicht dar\u00fcber. Du k\u00f6nntest mehr, aber irgendetwas in dir sagt: Bleib lieber unten, dort ist es sicher. Es f\u00fchlt sich an wie Bescheidenheit \u2014 aber eigentlich ist es Schutz.',
+    patterns: [
+      'Du denkst \u201eDas kann ich nicht\u201c \u2014 noch bevor du es versucht hast',
+      'Wenn du gelobt wirst, wehrst du ab oder schreibst es dem Zufall zu',
+      'Du hast Ideen, aber sagst sie erst, wenn jemand anderes sie ausspricht',
+      'Sichtbarkeit f\u00fchlt sich gef\u00e4hrlich an \u2014 als w\u00fcrde sie Angriffsfl\u00e4che bieten',
+      'Du sabotierst dich in dem Moment, wo Erfolg greifbar wird'
+    ],
+    exploit: 'Der Unsichtbar-Modus wird selten direkt ausgebeutet \u2014 aber er h\u00e4lt dich in Systemen gefangen, die von deiner Kleinheit profitieren. Unternehmen, die dich unterbezahlen, weil du nicht verhandelst. Beziehungen, in denen du dich anpasst. Eine Kultur, die dir sagt: Sei nicht zu viel. Und du gehorchst.',
+    exploitExamples: 'Imposter-Syndrom \u00b7 Vergleichskultur \u00b7 Hierarchien die Anpassung belohnen \u00b7 \u201eBescheidenheit ist eine Tugend\u201c',
+    unlock: 'Unsichtbarkeit ist kein Charakterzug. Es ist eine Schutzstrategie, die du als Kind gelernt hast. Die Frage ist nicht: Wie werde ich sichtbar? Sondern: Was passiert, wenn ich es bin? Meist nichts von dem, was das Programm dir erz\u00e4hlt.',
+    unlockTip: 'Sprich diese Woche einen Gedanken aus, den du normalerweise f\u00fcr dich behalten h\u00e4ttest. Nicht den gr\u00f6\u00dften. Irgendeinen. Und bemerke, was passiert \u2014 drau\u00dfen und drinnen.'
+  },
+  mehr: {
+    name: 'Der Mehr-Modus',
+    subtitle: 'Du optimierst endlos \u2014 weil Ankommen sich anf\u00fchlt wie Stillstand.',
+    description: 'Unter deinem Alltag l\u00e4uft ein Programm, das nie zufrieden ist. Es ist nicht gierig \u2014 es ist rastlos. Kaum hast du etwas erreicht, schaut es schon zum N\u00e4chsten. Kaum f\u00fchlst du dich gut, sagt es: Das reicht noch nicht. Es treibt dich an wie ein Motor ohne Aus-Schalter. Andere nennen es Ambition. Aber du wei\u00dft: Es ist kein Antrieb. Es ist eine Flucht.',
+    patterns: [
+      'Du feierst Erfolge nicht \u2014 du hast schon das n\u00e4chste Ziel im Blick',
+      'Ruhe macht dich nerv\u00f6s, nicht entspannt',
+      'Du konsumierst st\u00e4ndig neues Wissen \u2014 ohne es anzuwenden',
+      'Dein Kalender ist voll, und irgendwie bist du stolz darauf',
+      'Das Gef\u00fchl \u201eIch bin angekommen\u201c existiert nicht in deinem Wortschatz'
+    ],
+    exploit: 'Der Mehr-Modus ist die Lieblingsfrequenz des Kapitalismus. Upgrade. Premium. Next Level. Die Selbstoptimierungs-Industrie ist auf dich zugeschnitten: noch ein Kurs, noch eine Methode, noch ein Tool. FOMO funktioniert bei dir wie ein Zauberspruch. Und du merkst nicht, dass das \u201eMehr\u201c nie ankommt \u2014 weil es nicht soll.',
+    exploitExamples: 'FOMO-Marketing \u00b7 Upgrade-Kultur \u00b7 Abo-Modelle \u00b7 \u201eDas n\u00e4chste Level\u201c \u00b7 Selbstoptimierungsindustrie',
+    unlock: 'Dein Mehr-Modus hat eine gute Seite: Er hat dich hierher gebracht. Aber er kann dich nicht zu dir selbst bringen. Daf\u00fcr brauchst du einen anderen Muskel: die F\u00e4higkeit, mit dem zu sein, was da ist. Nicht weil es perfekt ist \u2014 sondern weil du es bist.',
+    unlockTip: 'Wenn du diese Woche etwas abschlie\u00dft \u2014 egal wie klein \u2014 halte bewusst 30 Sekunden inne. Sag dir nicht: Was kommt jetzt? Sag dir: Das hab ich gemacht. F\u00fchl es. Dann erst weiter.'
+  }
+};
+
+var QUESTIONS = [
+  {
+    text: 'Sonntagabend. Die neue Woche steht bevor.',
+    context: 'Was meldet sich zuerst \u2014 nicht was du denkst, was du f\u00fchlst.',
+    answers: [
+      { text: '\u201eIch muss diese Woche wirklich zeigen, was ich kann.\u201c', scores: { beweis: 3 } },
+      { text: '\u201eHoffentlich gibt es keinen Stress mit jemandem.\u201c', scores: { harmonie: 3 } },
+      { text: 'Ich gehe meinen Kalender durch und plane alles durch.', scores: { kontrolle: 3 } },
+      { text: 'Ein diffuses Unbehagen \u2014 ich sollte mehr aus meiner Zeit machen.', scores: { mehr: 3 } }
+    ]
+  },
+  {
+    text: 'Jemand kritisiert dich \u2014 nicht b\u00f6sartig, aber direkt.',
+    context: 'Die erste Reaktion, bevor du nachdenkst.',
+    answers: [
+      { text: 'Ich suche sofort nach Beweisen, dass die Kritik falsch ist.', scores: { beweis: 3 } },
+      { text: 'Ich frage mich, ob die Person jetzt sauer auf mich ist.', scores: { harmonie: 3 } },
+      { text: 'Ich analysiere die Kritik und plane, wie ich es besser mache.', scores: { kontrolle: 3 } },
+      { text: 'Ich ziehe mich innerlich zur\u00fcck und m\u00f6chte verschwinden.', scores: { unsichtbar: 3 } }
+    ]
+  },
+  {
+    text: 'Du scrollst durch Social Media. Was l\u00f6st den st\u00e4rksten Stich aus?',
+    context: '',
+    answers: [
+      { text: 'Jemand in meinem Alter hat beruflich mehr erreicht.', scores: { beweis: 3 } },
+      { text: 'Eine Person zeigt sich mutig und verletzlich \u2014 das k\u00f6nnte ich nie.', scores: { unsichtbar: 3 } },
+      { text: 'Ein neuer Kurs, ein neues Buch, ein neuer Ansatz \u2014 ich muss das kennen.', scores: { mehr: 3 } },
+      { text: 'Jemand teilt eine kontroverse Meinung \u2014 ich denke: \u201eDas gibt \u00c4rger.\u201c', scores: { harmonie: 2, unsichtbar: 1 } }
+    ]
+  },
+  {
+    text: 'Dein Chef gibt dir ein gro\u00dfes Kompliment vor dem ganzen Team.',
+    context: 'Was denkst du wirklich?',
+    answers: [
+      { text: '\u201eEndlich sieht jemand, wie viel ich leiste.\u201c', scores: { beweis: 3 } },
+      { text: '\u201eOh Gott, jetzt schauen alle auf mich.\u201c', scores: { unsichtbar: 3 } },
+      { text: '\u201eNett, aber was ist das n\u00e4chste Projekt?\u201c', scores: { mehr: 3 } },
+      { text: '\u201eHoffentlich sind die Kollegen jetzt nicht neidisch.\u201c', scores: { harmonie: 3 } }
+    ]
+  },
+  {
+    text: 'Ein Freund sagt kurzfristig ein Treffen ab.',
+    context: 'Ehrlich \u2014 nicht die erwachsene Version.',
+    answers: [
+      { text: '\u201eHab ich was falsch gemacht?\u201c', scores: { harmonie: 2, beweis: 1 } },
+      { text: '\u201eTypisch. Auf mich nimmt niemand R\u00fccksicht.\u201c \u2014 aber ich sage nichts.', scores: { unsichtbar: 2, harmonie: 1 } },
+      { text: 'Ich nutze die freie Zeit sofort f\u00fcr etwas Produktives.', scores: { mehr: 2, kontrolle: 1 } },
+      { text: 'Erleichterung \u2014 jetzt muss ich nicht performen.', scores: { beweis: 2, unsichtbar: 1 } }
+    ]
+  },
+  {
+    text: 'Du hast eine richtig gute Idee in einem Meeting.',
+    context: '',
+    answers: [
+      { text: 'Ich verpacke sie so, dass sie nicht zu selbstbewusst klingt.', scores: { unsichtbar: 3 } },
+      { text: 'Ich bringe sie ein und achte genau darauf, wie sie ankommt.', scores: { beweis: 3 } },
+      { text: 'Ich warte, ob jemand anderes etwas \u00c4hnliches sagt.', scores: { harmonie: 2, unsichtbar: 1 } },
+      { text: 'Ich sage sie, aber in meinem Kopf ist schon die n\u00e4chste, bessere Idee.', scores: { mehr: 3 } }
+    ]
+  },
+  {
+    text: 'Samstag, nichts geplant. Was passiert?',
+    context: '',
+    answers: [
+      { text: 'Ich finde irgendwas zu tun \u2014 ich kann nicht einfach nichts machen.', scores: { mehr: 3 } },
+      { text: 'Ich melde mich bei jemandem, schaue, wer etwas braucht.', scores: { harmonie: 3 } },
+      { text: 'Ich plane die n\u00e4chste Woche, r\u00e4ume auf, strukturiere.', scores: { kontrolle: 3 } },
+      { text: 'Ich genie\u00dfe es \u2014 und f\u00fchle mich gleichzeitig schuldig.', scores: { beweis: 2, mehr: 1 } }
+    ]
+  },
+  {
+    text: 'Du machst einen Fehler bei der Arbeit. Was ist der lauteste Gedanke?',
+    context: '',
+    answers: [
+      { text: '\u201eJetzt denken alle, ich bin nicht gut genug.\u201c', scores: { beweis: 3 } },
+      { text: '\u201eIch h\u00e4tte es besser pr\u00fcfen m\u00fcssen.\u201c', scores: { kontrolle: 3 } },
+      { text: '\u201eBitte lass es niemand gemerkt haben.\u201c', scores: { unsichtbar: 3 } },
+      { text: '\u201eIch muss das sofort wiedergutmachen, sonst gibt es Stimmung.\u201c', scores: { harmonie: 3 } }
+    ]
+  },
+  {
+    text: 'Du liest \u00fcber eine neue Methode zur Selbstentwicklung.',
+    context: '',
+    answers: [
+      { text: '\u201eDas muss ich ausprobieren. Vielleicht ist das der Schl\u00fcssel.\u201c', scores: { mehr: 3 } },
+      { text: '\u201eKlingt gut, aber wie passe ich das in meinen Plan ein?\u201c', scores: { kontrolle: 3 } },
+      { text: '\u201eSolche Dinge funktionieren bei anderen, nicht bei mir.\u201c', scores: { unsichtbar: 3 } },
+      { text: '\u201eDamit kann ich beweisen, dass ich auf dem richtigen Weg bin.\u201c', scores: { beweis: 3 } }
+    ]
+  },
+  {
+    text: 'In einer Beziehung: Wann f\u00fchlst du dich am unsichersten?',
+    context: 'Romantisch, Freundschaft, Familie \u2014 alles z\u00e4hlt.',
+    answers: [
+      { text: 'Wenn ich nicht wei\u00df, ob die andere Person zufrieden mit mir ist.', scores: { harmonie: 3 } },
+      { text: 'Wenn ich das Gef\u00fchl habe, nicht genug zu geben oder zu sein.', scores: { beweis: 3 } },
+      { text: 'Wenn Dinge unvorhersehbar werden und ich nicht planen kann.', scores: { kontrolle: 3 } },
+      { text: 'Wenn ich zu viel von mir zeige.', scores: { unsichtbar: 3 } }
+    ]
+  },
+  {
+    text: 'Wenn du ganz still bist \u2014 was ist das Grundgef\u00fchl unter allem?',
+    context: 'Keine Ablenkung. Kein Tun. Nur du.',
+    answers: [
+      { text: 'Ich bin noch nicht da, wo ich sein sollte.', scores: { mehr: 2, beweis: 1 } },
+      { text: 'Ich muss aufpassen, dass alles in Ordnung bleibt.', scores: { kontrolle: 2, harmonie: 1 } },
+      { text: 'Ich bin eigentlich gar nicht so wichtig.', scores: { unsichtbar: 3 } },
+      { text: 'Ich bin m\u00fcde vom Funktionieren.', scores: { harmonie: 2, beweis: 1 } }
+    ]
+  },
+  {
+    text: 'Stell dir vor, ein inneres Muster w\u00e4re morgen einfach weg. Welcher Satz trifft am meisten?',
+    context: 'Keine richtige Antwort. Nur deine.',
+    answers: [
+      { text: '\u201eIch m\u00fcsste niemandem mehr beweisen, dass ich gut genug bin.\u201c', scores: { beweis: 3 } },
+      { text: '\u201eIch k\u00f6nnte endlich sagen, was ich wirklich denke.\u201c', scores: { harmonie: 2, unsichtbar: 1 } },
+      { text: '\u201eIch k\u00f6nnte loslassen, ohne Angst, dass alles zerf\u00e4llt.\u201c', scores: { kontrolle: 3 } },
+      { text: '\u201eIch k\u00f6nnte einfach da sein \u2014 ohne etwas tun oder werden zu m\u00fcssen.\u201c', scores: { mehr: 3 } }
+    ]
+  }
+];
+
+// =======================================
+// STATE
+// =======================================
+var currentQ = 0;
+var scores = { beweis: 0, harmonie: 0, kontrolle: 0, unsichtbar: 0, mehr: 0 };
+
+// =======================================
+// FUNCTIONS
+// =======================================
+
+function startScan() {
+  document.getElementById('intro').style.display = 'none';
+  document.getElementById('scan').style.display = 'block';
+  showQuestion(0);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showQuestion(idx) {
+  currentQ = idx;
+  var q = QUESTIONS[idx];
+  var area = document.getElementById('questionArea');
+  var progress = (idx / QUESTIONS.length) * 100;
+  document.getElementById('progressBar').style.width = progress + '%';
+  document.getElementById('scanCounter').textContent =
+    String(idx + 1).padStart(2, '0') + ' / ' + String(QUESTIONS.length).padStart(2, '0');
+
+  var html = '<div class="question-container">';
+  html += '<div class="question-number">Frage ' + (idx + 1) + '</div>';
+  html += '<div class="question-text">' + q.text + '</div>';
+  if (q.context) html += '<div class="question-context">' + q.context + '</div>';
+  html += '<div class="answers">';
+  q.answers.forEach(function(a, i) {
+    html += '<button class="answer-btn" onclick="selectAnswer(' + idx + ',' + i + ')">' + a.text + '</button>';
+  });
+  html += '</div></div>';
+  area.innerHTML = html;
+}
+
+function selectAnswer(qIdx, aIdx) {
+  var answer = QUESTIONS[qIdx].answers[aIdx];
+  for (var key in answer.scores) {
+    scores[key] += answer.scores[key];
+  }
+
+  var btns = document.querySelectorAll('.answer-btn');
+  btns[aIdx].classList.add('selected');
+
+  setTimeout(function() {
+    if (currentQ < QUESTIONS.length - 1) {
+      showQuestion(currentQ + 1);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      showProcessing();
+    }
+  }, 350);
+}
+
+function showProcessing() {
+  document.getElementById('scan').style.display = 'none';
+  document.getElementById('processing').style.display = 'flex';
+  document.getElementById('progressBar').style.width = '100%';
+
+  var steps = [
+    { text: 'Muster werden analysiert...', detail: 'Antworten auswerten' },
+    { text: 'Dominantes Programm identifiziert.', detail: 'Archetypen abgleichen' },
+    { text: 'Exploit-Vektoren scannen...', detail: 'Wer profitiert?' },
+    { text: 'Ergebnis wird generiert.', detail: '' }
+  ];
+
+  var stepIdx = 0;
+  var interval = setInterval(function() {
+    stepIdx++;
+    if (stepIdx < steps.length) {
+      document.getElementById('processingText').textContent = steps[stepIdx].text;
+      document.getElementById('processingDetail').textContent = steps[stepIdx].detail;
+    } else {
+      clearInterval(interval);
+      setTimeout(showResult, 400);
+    }
+  }, 900);
+}
+
+function showResult() {
+  var sorted = Object.entries(scores).sort(function(a, b) { return b[1] - a[1]; });
+  var dominantKey = sorted[0][0];
+  var program = PROGRAMS[dominantKey];
+
+  document.getElementById('processing').style.display = 'none';
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('resultTitle').textContent = program.name;
+
+  var scoreBarsHtml = '<div class="score-bars">';
+  sorted.forEach(function(entry, i) {
+    var key = entry[0], val = entry[1];
+    var pct = sorted[0][1] > 0 ? Math.round((val / sorted[0][1]) * 100) : 0;
+    var displayPct = Math.max(pct, 4);
+    scoreBarsHtml += '<div class="score-bar-item ' + (i === 0 ? 'dominant' : '') + '">' +
+      '<div class="score-bar-label"><span class="name">' + PROGRAMS[key].name + '</span>' +
+      '<span class="pct">' + pct + '%</span></div>' +
+      '<div class="score-bar-track"><div class="score-bar-fill" style="width:0" data-width="' + displayPct + '%"></div></div></div>';
+  });
+  scoreBarsHtml += '</div>';
+
+  var patternsHtml = '<ul class="pattern-list">';
+  program.patterns.forEach(function(p) { patternsHtml += '<li>' + p + '</li>'; });
+  patternsHtml += '</ul>';
+
+  var content =
+    '<div class="result-card">' +
+      '<h3>' + program.subtitle + '</h3>' +
+      '<p>' + program.description + '</p>' +
+      scoreBarsHtml +
+      '<div class="result-section"><h4>So zeigt sich das im Alltag</h4>' + patternsHtml + '</div>' +
+    '</div>' +
+    '<div class="exploit-card">' +
+      '<h3>Wer davon profitiert, dass du das nicht siehst</h3>' +
+      '<p>' + program.exploit + '</p>' +
+      '<div class="exploit-examples">' + program.exploitExamples + '</div>' +
+    '</div>' +
+    '<div class="unlock-card">' +
+      '<h3>Der erste Schritt raus</h3>' +
+      '<p>' + program.unlock + '</p>' +
+      '<div class="micro-experiment"><div class="label">Dein Micro-Experiment</div><p>' + program.unlockTip + '</p></div>' +
+    '</div>' +
+    '<div class="teaser-card">' +
+      '<h3>Du willst <span>tiefer</span> gehen?</h3>' +
+      '<p>Dieser Scan zeigt die Oberfl\u00e4che. Dahinter liegt ein ganzes System aus unsichtbaren Programmen. Trag dich ein \u2014 und finde heraus, welche Glaubenss\u00e4tze das Programm am Laufen halten.</p>' +
+      '<div class="email-form"><input type="email" placeholder="Deine E-Mail" id="emailInput" />' +
+      '<button onclick="submitEmail()">Weitergehen</button></div>' +
+      '<div class="form-note">Kein Spam. Nur Substanz.</div>' +
+    '</div>' +
+    '<div class="share-section">' +
+      '<div class="share-text">Jemand in deinem Leben sollte das auch sehen?</div>' +
+      '<div class="share-buttons">' +
+        '<a class="share-btn" href="https://wa.me/?text=' + encodeURIComponent('Welches unsichtbare Programm steuert dich? Mach den Scan: ' + location.href) + '" target="_blank">WhatsApp</a>' +
+        '<button class="share-btn" onclick="copyLink()">Link kopieren</button>' +
+      '</div>' +
+      '<span class="restart-link" onclick="restart()">Scan wiederholen</span>' +
+    '</div>';
+
+  document.getElementById('resultContent').innerHTML = content;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  setTimeout(function() {
+    document.querySelectorAll('.score-bar-fill').forEach(function(bar) {
+      bar.style.width = bar.dataset.width;
+    });
+  }, 500);
+}
+
+function submitEmail() {
+  var email = document.getElementById('emailInput').value;
+  if (!email || email.indexOf('@') === -1) {
+    document.getElementById('emailInput').style.borderColor = 'var(--red)';
+    return;
+  }
+  var form = document.querySelector('.email-form');
+  form.innerHTML = '<p style="color: var(--accent-color); font-family: var(--font-system); font-size: 1rem; padding: 14px 0;">Du bist drin. Mehr kommt bald.</p>';
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(location.href).then(function() {
+    var btn = document.querySelectorAll('.share-btn')[1];
+    btn.textContent = 'Kopiert!';
+    setTimeout(function() { btn.textContent = 'Link kopieren'; }, 2000);
+  });
+}
+
+function restart() {
+  Object.keys(scores).forEach(function(k) { scores[k] = 0; });
+  currentQ = 0;
+  document.getElementById('result').style.display = 'none';
+  document.getElementById('progressBar').style.width = '0%';
+  document.getElementById('intro').style.display = 'flex';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
