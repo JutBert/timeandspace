@@ -3,29 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutz</title>
+    <title>Datenschutz | Time & Space</title>
     <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            background-color: #050505; /* Dein fast-schwarzer Hintergrund */
-            color: #e0e0e0;            /* Helle Schrift */
-            font-family: monospace;    /* Terminal Look */
-            padding: 40px;
+            background-color: #0A0A0A;
+            color: #E0E0E0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .terminal-container {
             max-width: 800px;
             margin: 0 auto;
-            line-height: 1.6;
+            padding: 40px 24px;
+            width: 100%;
+            flex: 1;
         }
-        h1 { color: #FF1493; }         /* Dein Neon-Pink */
-        a { color: #FF1493; text-decoration: none; }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #333;
+            margin-bottom: 2rem;
+        }
+
+        header a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        header img {
+            height: 50px;
+            width: auto;
+        }
+
+        .blink {
+            margin-left: 10px;
+            font-size: 30px;
+            line-height: 0;
+            color: #FF1493;
+            animation: blink-anim 1s step-end infinite;
+        }
+
+        @keyframes blink-anim {
+            50% { opacity: 0; }
+        }
+
+        .status-light {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #5a9e6f;
+            letter-spacing: 0.05em;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #FF1493;
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            transition: opacity 0.2s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        h1 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #E0E0E0;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #FF1493;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        p {
+            color: #888;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            color: #bbb;
+        }
+
+        footer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 24px;
+            border-top: 1px solid #333;
+            width: 100%;
+            text-align: center;
+        }
+
+        .legal-links {
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-links a {
+            color: #666;
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            transition: color 0.2s;
+        }
+
+        .legal-links a:hover {
+            color: #FF1493;
+        }
+
+        .separator {
+            color: #333;
+            margin: 0 0.75rem;
+        }
+
+        .copy {
+            color: #444;
+            font-size: 0.7rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
     </style>
 </head>
 <body>
-    <h1>IMPRESSUM</h1>
-    <p>Angaben gemäß § 5 TMG</p>
-    <br>
-    <p>[Hier kommt deine Adresse rein]</p>
-    <p>Coming Soon...</p>
-    <br><br>
-    <p><a href="index.html">← ZURÜCK ZUM SYSTEM</a></p>
+    <div class="terminal-container">
+
+        <header>
+            <div style="display: flex; align-items: center;">
+                <a href="index.html">
+                    <img src="logo.png" alt="Pink Sheep Logo">
+                    <span class="blink">_</span>
+                </a>
+            </div>
+            <div class="status-light">SYSTEM: ONLINE</div>
+        </header>
+
+        <section>
+            <a href="index.html" class="back-link">&larr; ZUR&Uuml;CK ZUM SYSTEM</a>
+
+            <h1>DATENSCHUTZ</h1>
+
+            <h3>1. DATENSCHUTZ AUF EINEN BLICK</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+
+            <h3>2. ALLGEMEINE HINWEISE UND PFLICHTINFORMATIONEN</h3>
+            <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+
+            <h3>3. DATENERFASSUNG AUF DIESER WEBSITE</h3>
+            <p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            </p>
+            <p>
+                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+            </p>
+
+            <h3>4. ANALYSE-TOOLS UND WERBUNG</h3>
+            <p>
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.
+            </p>
+
+            <h3>5. NEWSLETTER</h3>
+            <p>
+                Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+            </p>
+
+            <h3>6. KONTAKT</h3>
+            <p class="contact-info">
+                Bei Fragen zum Datenschutz k&ouml;nnen Sie sich jederzeit an uns wenden: kontakt@timeandspace.online
+            </p>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="legal-links">
+            <a href="impressum.html">Impressum</a>
+            <span class="separator">|</span>
+            <a href="datenschutz.html">Datenschutz</a>
+        </div>
+        <div class="copy">&copy; 2026 Time + Space Protocol</div>
+    </footer>
+
 </body>
 </html>
