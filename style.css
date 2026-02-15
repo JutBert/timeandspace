@@ -178,6 +178,7 @@ details[open] summary { color: #fff; margin-bottom: 1rem; }
 
 .btn-terminal {
     display: inline-block;
+    background: transparent;
     color: #E0E0E0;            /* Helle Schrift */
     text-decoration: none;     /* Unterstrich weg */
     border: 1px solid #444;    /* Dezenter Rahmen */
@@ -188,6 +189,7 @@ details[open] summary { color: #fff; margin-bottom: 1rem; }
     letter-spacing: 0.05em;
     transition: all 0.3s ease;
     margin-bottom: 0.5rem;
+    cursor: pointer;
 }
 
 .btn-terminal:hover {
@@ -195,6 +197,51 @@ details[open] summary { color: #fff; margin-bottom: 1rem; }
     color: #FF1493;            /* Pinke Schrift */
     box-shadow: 0 0 8px rgba(255, 20, 147, 0.3); /* Leichtes Leuchten */
 }
+
+/* --- PROMINENTER CTA-BUTTON (Scan starten, Protokoll starten etc.) --- */
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-action::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease infinite;
+}
+
+.btn-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(255, 20, 147, 0.4);
+}
+
+.btn-action .arrow {
+    transition: transform 0.3s;
+}
+
+.btn-action:hover .arrow {
+    transform: translateX(5px);
+}
+
 /* FOOTER */
 .labor-link {
     text-align: center;
